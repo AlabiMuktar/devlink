@@ -1,12 +1,12 @@
 import { NextRequest } from "next/server";
 import { authMiddleware } from "next-firebase-auth-edge";
-import { clientConfig, serverConfig } from "./config";
+import { firebaseConfig, serverConfig } from "./config";
 
 export async function middleware(request: NextRequest) {
   return authMiddleware(request, {
     loginPath: "/",
     logoutPath: "/logout",
-    apiKey: clientConfig.apiKey,
+    apiKey: firebaseConfig.apiKey,
     cookieName: serverConfig.cookieName,
     cookieSignatureKeys: serverConfig.cookieSignatureKeys,
     cookieSerializeOptions: serverConfig.cookieSerializeOptions,
