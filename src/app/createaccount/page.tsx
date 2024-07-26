@@ -27,6 +27,7 @@ const CreateAccount = () => {
         setIsLoading(true)
         if (!email || !password || !confirmPassword) {
             setEmptyField(true)
+            setIsLoading(false)
             return
         }
 

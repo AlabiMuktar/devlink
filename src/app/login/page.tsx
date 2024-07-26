@@ -26,6 +26,7 @@ const Login = () => {
 
         if (!email || !password) {
             setEmptyField(true)
+            setIsLoading(false)
             return
         }
 
